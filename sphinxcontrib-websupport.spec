@@ -6,13 +6,14 @@
 #
 Name     : sphinxcontrib-websupport
 Version  : 1.0.1
-Release  : 1
+Release  : 2
 URL      : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.0.1.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.0.1.tar.gz
 Source99 : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.0.1.tar.gz.asc
 Summary  : Sphinx API for Web Apps
 Group    : Development/Tools
 License  : BSD-3-Clause
+Requires: sphinxcontrib-websupport-legacypython
 Requires: sphinxcontrib-websupport-python
 Requires: pytest
 Requires: python-mock
@@ -31,9 +32,18 @@ BuildRequires : virtualenv
 sphinxcontrib-webuspport provides a Python API to easily integrate Sphinx
         documentation into your Web application.
 
+%package legacypython
+Summary: legacypython components for the sphinxcontrib-websupport package.
+Group: Default
+
+%description legacypython
+legacypython components for the sphinxcontrib-websupport package.
+
+
 %package python
 Summary: python components for the sphinxcontrib-websupport package.
 Group: Default
+Requires: sphinxcontrib-websupport-legacypython
 
 %description python
 python components for the sphinxcontrib-websupport package.
@@ -47,12 +57,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503153701
+export SOURCE_DATE_EPOCH=1505071801
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1503153701
+export SOURCE_DATE_EPOCH=1505071801
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -63,7 +73,10 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
