@@ -6,7 +6,7 @@
 #
 Name     : sphinxcontrib-websupport
 Version  : 1.0.1
-Release  : 8
+Release  : 9
 URL      : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.0.1.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.0.1.tar.gz
 Source99 : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.0.1.tar.gz.asc
@@ -15,8 +15,6 @@ Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: sphinxcontrib-websupport-python3
 Requires: sphinxcontrib-websupport-python
-Requires: pytest
-Requires: python-mock
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pluggy
@@ -67,12 +65,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1519350997
+export SOURCE_DATE_EPOCH=1519399128
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1519350997
+export SOURCE_DATE_EPOCH=1519399128
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
