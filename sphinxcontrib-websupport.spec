@@ -6,7 +6,7 @@
 #
 Name     : sphinxcontrib-websupport
 Version  : 1.1.0
-Release  : 17
+Release  : 18
 URL      : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz
 Source99 : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz.asc
@@ -76,12 +76,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530374368
+export SOURCE_DATE_EPOCH=1530377574
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1530374368
+export SOURCE_DATE_EPOCH=1530377574
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/sphinxcontrib-websupport
 cp LICENSE %{buildroot}/usr/share/doc/sphinxcontrib-websupport/LICENSE
