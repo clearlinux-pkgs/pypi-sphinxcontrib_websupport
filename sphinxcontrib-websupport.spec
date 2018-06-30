@@ -6,7 +6,7 @@
 #
 Name     : sphinxcontrib-websupport
 Version  : 1.1.0
-Release  : 16
+Release  : 17
 URL      : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz
 Source99 : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz.asc
@@ -14,15 +14,18 @@ Summary  : Sphinx API for Web Apps
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: sphinxcontrib-websupport-python3
+Requires: sphinxcontrib-websupport-license
 Requires: sphinxcontrib-websupport-python
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pytest
-
+BuildRequires : python-core
+BuildRequires : python3-core
 BuildRequires : python3-dev
 BuildRequires : setuptools
+BuildRequires : setuptools-legacypython
 BuildRequires : tox
 BuildRequires : virtualenv
 
@@ -37,6 +40,14 @@ Requires: python-core
 
 %description legacypython
 legacypython components for the sphinxcontrib-websupport package.
+
+
+%package license
+Summary: license components for the sphinxcontrib-websupport package.
+Group: Default
+
+%description license
+license components for the sphinxcontrib-websupport package.
 
 
 %package python
@@ -65,13 +76,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1528391270
+export SOURCE_DATE_EPOCH=1530374368
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1528391270
+export SOURCE_DATE_EPOCH=1530374368
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/sphinxcontrib-websupport
+cp LICENSE %{buildroot}/usr/share/doc/sphinxcontrib-websupport/LICENSE
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -84,6 +97,10 @@ echo ----[ mark ]----
 %files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/sphinxcontrib-websupport/LICENSE
 
 %files python
 %defattr(-,root,root,-)
