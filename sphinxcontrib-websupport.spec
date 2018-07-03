@@ -6,7 +6,7 @@
 #
 Name     : sphinxcontrib-websupport
 Version  : 1.1.0
-Release  : 19
+Release  : 20
 URL      : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz
 Source99 : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz.asc
