@@ -6,32 +6,26 @@
 #
 Name     : sphinxcontrib-websupport
 Version  : 1.1.0
-Release  : 23
+Release  : 24
 URL      : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz
 Source0  : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz
 Source99 : http://pypi.debian.net/sphinxcontrib-websupport/sphinxcontrib-websupport-1.1.0.tar.gz.asc
 Summary  : Sphinx API for Web Apps
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: sphinxcontrib-websupport-python3
-Requires: sphinxcontrib-websupport-license
-Requires: sphinxcontrib-websupport-python
-BuildRequires : pbr
-BuildRequires : pip
+Requires: sphinxcontrib-websupport-license = %{version}-%{release}
+Requires: sphinxcontrib-websupport-python = %{version}-%{release}
+Requires: sphinxcontrib-websupport-python3 = %{version}-%{release}
+BuildRequires : buildreq-distutils23
+BuildRequires : buildreq-distutils3
 BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pytest
-BuildRequires : python-core
-BuildRequires : python3-core
-BuildRequires : python3-dev
-BuildRequires : setuptools
-BuildRequires : setuptools-legacypython
 BuildRequires : tox
 BuildRequires : virtualenv
 
 %description
-sphinxcontrib-websupport provides a Python API to easily integrate Sphinx
-        documentation into your Web application.
+This whole directory is there to test html_static_path.
 
 %package legacypython
 Summary: legacypython components for the sphinxcontrib-websupport package.
@@ -53,7 +47,7 @@ license components for the sphinxcontrib-websupport package.
 %package python
 Summary: python components for the sphinxcontrib-websupport package.
 Group: Default
-Requires: sphinxcontrib-websupport-python3
+Requires: sphinxcontrib-websupport-python3 = %{version}-%{release}
 
 %description python
 python components for the sphinxcontrib-websupport package.
@@ -76,15 +70,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530377574
+export SOURCE_DATE_EPOCH=1551038478
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1530377574
+export SOURCE_DATE_EPOCH=1551038478
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/sphinxcontrib-websupport
-cp LICENSE %{buildroot}/usr/share/doc/sphinxcontrib-websupport/LICENSE
+mkdir -p %{buildroot}/usr/share/package-licenses/sphinxcontrib-websupport
+cp LICENSE %{buildroot}/usr/share/package-licenses/sphinxcontrib-websupport/LICENSE
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -99,8 +93,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/sphinxcontrib-websupport/LICENSE
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/sphinxcontrib-websupport/LICENSE
 
 %files python
 %defattr(-,root,root,-)
