@@ -4,7 +4,7 @@
 #
 Name     : sphinxcontrib-websupport
 Version  : 1.2.0
-Release  : 34
+Release  : 35
 URL      : https://files.pythonhosted.org/packages/70/1f/1a77d611cc55dd046b5cae28ec1a086c7bcf50e9837571afaeff1b5caa7e/sphinxcontrib-websupport-1.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/70/1f/1a77d611cc55dd046b5cae28ec1a086c7bcf50e9837571afaeff1b5caa7e/sphinxcontrib-websupport-1.2.0.tar.gz
 Summary  : Sphinx API for Web Apps
@@ -24,7 +24,7 @@ BuildRequires : virtualenv
 
 %description
 sphinxcontrib-websupport provides a Python API to easily integrate Sphinx
-documentation into your Web application.
+        documentation into your Web application.
 
 %package license
 Summary: license components for the sphinxcontrib-websupport package.
@@ -47,7 +47,7 @@ python components for the sphinxcontrib-websupport package.
 Summary: python3 components for the sphinxcontrib-websupport package.
 Group: Default
 Requires: python3-core
-Provides: pypi(sphinxcontrib-websupport)
+Provides: pypi(sphinxcontrib_websupport)
 
 %description python3
 python3 components for the sphinxcontrib-websupport package.
@@ -62,8 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582918376
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583697687
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
