@@ -1,3 +1,8 @@
+Release 1.2.3 (2020-06-27)
+==========================
+
+* #43: doctreedir argument has been ignored on initialize app
+
 Release 1.2.2 (2020-04-29)
 ==========================
 
