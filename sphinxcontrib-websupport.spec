@@ -6,7 +6,7 @@
 #
 Name     : sphinxcontrib-websupport
 Version  : 1.2.4
-Release  : 53
+Release  : 54
 URL      : https://files.pythonhosted.org/packages/da/aa/b03a3f569a52b6f21a579d168083a27036c1f606269e34abdf5b70fe3a2c/sphinxcontrib-websupport-1.2.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/da/aa/b03a3f569a52b6f21a579d168083a27036c1f606269e34abdf5b70fe3a2c/sphinxcontrib-websupport-1.2.4.tar.gz
 Source1  : https://files.pythonhosted.org/packages/da/aa/b03a3f569a52b6f21a579d168083a27036c1f606269e34abdf5b70fe3a2c/sphinxcontrib-websupport-1.2.4.tar.gz.asc
@@ -16,16 +16,13 @@ License  : BSD-2-Clause
 Requires: sphinxcontrib-websupport-license = %{version}-%{release}
 Requires: sphinxcontrib-websupport-python = %{version}-%{release}
 Requires: sphinxcontrib-websupport-python3 = %{version}-%{release}
-Requires: flake8
-Requires: sphinxcontrib-serializinghtml
 BuildRequires : buildreq-distutils3
-BuildRequires : flake8
-BuildRequires : pluggy
-BuildRequires : py-python
-BuildRequires : pytest
-BuildRequires : sphinxcontrib-serializinghtml
-BuildRequires : tox
-BuildRequires : virtualenv
+BuildRequires : pypi(pluggy)
+BuildRequires : pypi(py)
+BuildRequires : pypi(pytest)
+BuildRequires : pypi(sphinxcontrib_serializinghtml)
+BuildRequires : pypi(tox)
+BuildRequires : pypi(virtualenv)
 
 %description
 sphinxcontrib-websupport provides a Python API to easily integrate Sphinx
@@ -68,15 +65,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1597082832
+export SOURCE_DATE_EPOCH=1641427841
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
