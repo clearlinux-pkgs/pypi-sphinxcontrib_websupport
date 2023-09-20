@@ -1,5 +1,5 @@
 PKG_NAME := pypi-sphinxcontrib_websupport
-URL = https://files.pythonhosted.org/packages/da/aa/b03a3f569a52b6f21a579d168083a27036c1f606269e34abdf5b70fe3a2c/sphinxcontrib-websupport-1.2.4.tar.gz
+URL = https://files.pythonhosted.org/packages/8a/a8/5b8b11590c880b4511c93523214d6455ff7d108fd0a20e5b39064ce3c92e/sphinxcontrib_websupport-1.2.6.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
