@@ -7,7 +7,7 @@
 #
 Name     : pypi-sphinxcontrib_websupport
 Version  : 2.0.0
-Release  : 70
+Release  : 71
 URL      : https://files.pythonhosted.org/packages/87/ed/11167ae7c3eb80e7c67823bceea24207bb7b886aefde6c367b4a571c05de/sphinxcontrib_websupport-2.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/87/ed/11167ae7c3eb80e7c67823bceea24207bb7b886aefde6c367b4a571c05de/sphinxcontrib_websupport-2.0.0.tar.gz
 Summary  : sphinxcontrib-websupport provides a Python API to easily integrate Sphinx documentation into your Web application
